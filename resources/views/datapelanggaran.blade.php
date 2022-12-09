@@ -47,7 +47,7 @@
                                 <td>
                                     <a href="/tampilkanpelanggaran/{{ $a->id }}" type="button" class="btn btn-warning">EDIT</a>
                                     <a href="/deletepelanggaran/{{ $a->id }}" type="button" class="btn btn-danger">HAPUS</a>
-                                    <button type="button" class="btn btn-info" data-id="{{ $a->id }}">Detail</button>
+                                    {{-- <button type="button" class="btn btn-info" data-id="{{ $a->id }}">Detail</button> --}}
                                 </td>
                             </tr>
                             @endforeach

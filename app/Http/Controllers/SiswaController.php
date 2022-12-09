@@ -29,6 +29,14 @@ class SiswaController extends Controller
         // dd($data);
 
         return view('editsiswa', compact('data'));
+
+    }
+    public function detailsiswa($id) {
+        
+        $data = Siswa::find($id);
+        // dd($data);
+
+        return view('detailsiswa', compact('data'));
     }
 
     public function updatesiswa(Request $request, $id) {

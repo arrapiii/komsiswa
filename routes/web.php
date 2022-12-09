@@ -42,6 +42,8 @@ Route::post('/insertsiswa', [SiswaController::class, 'insertsiswa'])->name('inse
 
 Route::get('/tampilkansiswa/{id}', [SiswaController::class, 'tampilkansiswa'])->name('tampilkansiswa');
 
+Route::get('/detailsiswa/{id}', [SiswaController::class, 'detailsiswa'])->name('detailsiswa');
+
 Route::post('/updatesiswa/{id}', [SiswaController::class, 'updatesiswa'])->name('updatesiswa');
 
 Route::get('/deletesiswa/{id}', [SiswaController::class, 'deletesiswa'])->name('deletesiswa');

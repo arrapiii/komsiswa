@@ -68,7 +68,7 @@
                                 <td>
                                     <a href="/tampilkansiswa/{{ $a->id }}" type="button" class="btn btn-warning">EDIT</a>
                                     <a href="/deletesiswa/{{ $a->id }}" type="button" class="btn btn-danger">HAPUS</a>
-                                    <button type="button" class="btn btn-info" data-id="{{ $a->id }}">Detail</button>
+                                    <a href="/detailsiswa/{{ $a->id }}" type="button" class="btn btn-info" data-id="{{ $a->id }}">Detail</a>
                                 </td>
                             </tr>
                             @endforeach
