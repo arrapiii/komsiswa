@@ -4,7 +4,7 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <!-- FORM INPUT -->
-    <form action="/updatesiswa/{{ $data->id }}" method="POST" enctype="multipart/form-data">
+    <form action="/updateguru/{{ $data->id }}" method="POST" enctype="multipart/form-data">
       @csrf
         <div class="form-group">
           <label for="exampleInputPassword1">Nama</label>

@@ -3,13 +3,8 @@
 @section('content')
      <!-- Begin Page Content -->
      <div class="container-fluid">
-
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-        <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-            For more information about DataTables, please visit the <a target="_blank"
-                href="https://datatables.net">official DataTables documentation</a>.</p>
-        
         <a  type="button" class="btn btn-outline-primary" href="/inputguru">+ TAMBAH DATA</a>
         <br>
         <br>
@@ -23,126 +18,60 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>NO</th>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>No</th>
+                                <th>Nama Guru</th>
+                                <th>Nip</th>
+                                <th>Matpel</th>
+                                {{-- <th>Tgl Lahir</th>
+                                <th>Tempat Lahir</th> --}}
+                                <th>Jenis Kelamin</th>
+                                {{-- <th>No. Telp</th> --}}
+                                <th>Agama</th>
+                                {{-- <th>Email</th>
+                                <th>Password</th> --}}
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>NO</th>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>No</th>
+                                <th>Nama Guru</th>
+                                <th>Nip</th>
+                                <th>Matpel</th>
+                                {{-- <th>Tgl Lahir</th>
+                                <th>Tempat Lahir</th> --}}
+                                <th>Jenis Kelamin</th>
+                                {{-- <th>No. Telp</th> --}}
+                                <th>Agama</th>
+                                {{-- <th>Email</th>
+                                <th>Password</th> --}}
+                                <th>Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>
+                            @php
+                                $no = 1;
+                            @endphp
+                            @foreach ($data as $a)
                             <tr>
-                                <td>1</td>
-                                <td>Pak Mahes</td>
-                                <td>Agama</td>
-                                <td>SMK TARUNA BHAKTI</td>
-                                <td>27 gatau sih</td>
-                                <td>2011/01/25</td>
-                                <td>Rp.100.000.000</td>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $a->namaguru}}</td>
+                                <td>{{ $a->nip}}</td>
+                                <td>{{ $a->matpel }}</td>
+                                {{-- <td>{{ $a->tgllahir }}</td>
+                                <td>{{ $a->tempatlahir }}</td> --}}
+                                <td>{{ $a->jeniskelamin }}</td>
+                                {{-- <td>0{{ $a->notelp }}</td> --}}
+                                <td>{{ $a->agama }}</td>
+                                {{-- <td>{{ $a->email }}</td>
+                                <td>{{ $a->password }}</td> --}}
+                                <td>
+                                    <a href="/tampilkanguru/{{ $a->id }}" type="button" class="btn btn-warning">EDIT</a>
+                                    <a href="/deleteguru/{{ $a->id }}" type="button" class="btn btn-danger">HAPUS</a>
+                                    <button type="button" class="btn btn-info" data-id="{{ $a->id }}">Detail</button>
+                                </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Pak Deee</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                            </tr>
-                            <tr>
-                                <td>100</td>
-                                <td>Pak Dhani</td>
-                                <td>Bhs Inggris</td>
-                                <td>TARUNA BHAKTI</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>1.000.000.000</td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -152,5 +81,7 @@
     <!-- /.container-fluid -->
 
 </div>
+
+
 <!-- End of Main Content -->
 @endsection
