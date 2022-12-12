@@ -41,7 +41,7 @@ class SiswaController extends Controller
     }
 
     public function updatesiswa(Request $request, $id) {
-        $data = Siswa::find($id);
+        $data = Siswa::with('relationsToPelanggaran', 'guru');
         $data->update($request->all());
         return redirect()->route('siswa')->with('success','Data Berhasil Di Ubah'); 
     }

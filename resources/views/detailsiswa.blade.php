@@ -54,7 +54,7 @@
                 <br>
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Walas</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{ $data->guru->namaguru }}" placeholder="Walas" disabled>
+                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{ $data->guru->guru }}" placeholder="Walas" disabled>
                 </div>
             </div>
         </div>

@@ -9,8 +9,19 @@ class SiswaPelanggaran extends Model
 {
     use HasFactory;
 
-    protected $table = 'pelanggaran_siswa';
-    protected $guarded = [];
-    protected $fillable = ['siswa_id', 'pelanggaran_id'];
+    protected $guarded = ['id'];
+    public $timestamps = false; 
+
+    public function relationsToPelanggaran()
+    {
+        return $this->belongsTo(Siswa::class);
+    }
+
+    public function relationsToSiswa()
+    {
+        return $this->belongsTo(Pelanggaran::class);
+    }
+
+
     
 }

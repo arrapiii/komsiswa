@@ -15,7 +15,7 @@ class Pelanggaran extends Model
     protected $fillable = ['pelanggaran_siswa', 'tindaklanjut', 'jumlahpoin'];
 
     public function relationsToSiswa(){
-        return $this->belongsToMany(Siswa::class);
+        return $this->belongsToMany(Siswa::class,SiswaPelanggaran::class);
     }
 
 }

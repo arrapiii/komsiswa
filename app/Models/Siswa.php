@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Guru;
 use App\Models\Pelanggaran;
+use App\Models\SiswaPelanggaran;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Siswa extends Model
 {
@@ -21,6 +22,6 @@ class Siswa extends Model
     }
 
     public function relationsToPelanggaran() {
-        return $this->belongsToMany(Pelanggaran::class);
+        return $this->belongsToMany(Pelanggaran::class,SiswaPelanggaran::class);
     }
 }

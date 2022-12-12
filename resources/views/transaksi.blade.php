@@ -5,7 +5,7 @@
      <div class="container-fluid">
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-        <a  type="button" class="btn btn-outline-primary" href="#">+ TAMBAH DATA</a>
+        <a  type="button" class="btn btn-outline-primary" href="/inputpelanggar">+ TAMBAH DATA</a>
         <br>
         <br>
         <!-- DataTales Example -->
@@ -22,8 +22,10 @@
                                 <th>Nama Siswa</th>
                                 <th>Walas</th>
                                 <th>Pelanggaran</th>
-                                <th>jumlah</th>
-                                <th>Aksi</th>
+                                <th>Poin</th>
+                                <th>Total Pelanggaran</th>
+                                <th>Jumlah Poin</th>
+                                {{-- <th>Aksi</th> --}}
                             </tr>
                         </thead>
                         <tfoot>
@@ -32,8 +34,10 @@
                                 <th>Nama Siswa</th>
                                 <th>Walas</th>
                                 <th>Pelanggaran</th>
-                                <th>jumlah</th>
-                                <th>Aksi</th>
+                                <th>Poin</th>
+                                <th>Total Pelanggaran</th>
+                                <th>Jumlah Poin</th>
+                                {{-- <th>Aksi</th> --}}
                             </tr>
                         </tfoot>
                         <tbody>
@@ -52,11 +56,27 @@
                                         @endforeach
                                     </ul>
                                 </td>
+                                <td>
+                                    <ul>
+                                        @foreach ($a->relationsToPelanggaran as $b)
+                                            <li>{{ $b->jumlahpoin }}</li>                                         
+                                        @endforeach
+                                    </ul>
+                                </td>
                                 <td>{{ $a->relationsToPelanggaran->count() }}</td>
+                                <td>
+                                    @php
+                                        $total = 0
+                                    @endphp
+                                    @foreach ($a->relationsToPelanggaran as $poin)
+                                        @php
+                                            $total += $poin -> jumlahpoin
+                                        @endphp
+                                    @endforeach
+                                    {{ $total }}
+                                </td>
                                 <td style="display: flex;">
-                                    <a href="#" type="button" class="btn btn-warning">EDIT</a>
-                                    <a href="#" type="button" class="btn btn-danger" style="margin: 0 10px">HAPUS</a>
-                                    <a href="#" type="button" class="btn btn-info" data-id="#">Detail</a>
+                                    {{-- <a href="/detailpelanggar" type="button" class="btn btn-info" data-id="#">Detail</a> --}}
                                 </td>
                             </tr>
                             @endforeach
