@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('siswa');
             $table->enum('kelas',['10', '11', '12']);
             $table->enum('jurusan',['TJKT', 'Animasi', 'PPLG', 'BRC', 'TE']);
             $table->bigInteger('nis');
@@ -24,7 +24,8 @@ return new class extends Migration
             $table->bigInteger('notelp');
             $table->string('email');
             $table->string('password');
-            $table->string('walas');
+            $table->unsignedbigInteger('guru_id');
+            $table->foreign('guru_id')->references('id')->on('gurus');
             $table->timestamps();
         });
     }

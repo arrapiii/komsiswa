@@ -16,7 +16,7 @@ class GuruSeeder extends Seeder
     public function run()
     {
         DB::table('gurus')->insert([
-            'namaguru' => 'Eca',
+            'guru' => 'Eca',
             'nip' => '11',
             'matpel' => 'MTK',
             'tgllahir' => '10 agustus 1999',

@@ -4,18 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Siswa;
+use App\Models\Guru;
 
 
 class SiswaController extends Controller
 {
     public function siswa() {
-
-        $data = Siswa::all();
+        $data = Siswa::with(['guru'])->get();
         return view('datasiswa', compact('data'));
     }
 
     public function inpsiswa() {
-        return view('inputsiswa');
+        $wal = Guru::all();
+        return view('inputsiswa', compact('wal'));
     }
 
     public function insertsiswa(Request $request) {
@@ -24,11 +25,11 @@ class SiswaController extends Controller
     }
 
     public function tampilkansiswa($id) {
-        
-        $data = Siswa::find($id);
+        $wal = Guru::all();
+        $data = Siswa::with('guru')->find($id);
         // dd($data);
 
-        return view('editsiswa', compact('data'));
+        return view('editsiswa', compact('data', 'wal'));
 
     }
     public function detailsiswa($id) {

@@ -27,8 +27,8 @@
                                 {{-- <th>Alamat</th>
                                 <th>No. Telp</th>
                                 <th>Email</th>
-                                <th>Password</th>
-                                <th>Wali Kelas</th> --}}
+                                <th>Password</th> --}}
+                                <th>Wali Kelas</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -43,8 +43,8 @@
                                 {{-- <th>Alamat</th>
                                 <th>No. Telp</th>
                                 <th>Email</th>
-                                <th>Password</th>
-                                <th>Wali Kelas</th> --}}
+                                <th>Password</th> --}}
+                                <th>Wali Kelas</th>
                                 <th>Aksi</th>
                             </tr>
                         </tfoot>
@@ -55,7 +55,7 @@
                             @foreach ($data as $a)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $a->nama}}</td>
+                                <td>{{ $a->siswa}}</td>
                                 <td>{{ $a->kelas}}</td>
                                 <td>{{ $a->jurusan }}</td>
                                 <td>00{{ $a->nis }}</td>
@@ -63,11 +63,11 @@
                                 {{-- <td>{{ $a->alamat }}</td>
                                 <td>0{{ $a->notelp }}</td>
                                 <td>{{ $a->email }}</td>
-                                <td>{{ $a->password }}</td>
-                                <td>{{ $a->walas }}</td> --}}
-                                <td>
+                                <td>{{ $a->password }}</td> --}}
+                                <td>{{ $a->guru->guru }}</td>
+                                <td style="display: flex;">
                                     <a href="/tampilkansiswa/{{ $a->id }}" type="button" class="btn btn-warning">EDIT</a>
-                                    <a href="/deletesiswa/{{ $a->id }}" type="button" class="btn btn-danger">HAPUS</a>
+                                    <a href="/deletesiswa/{{ $a->id }}" type="button" class="btn btn-danger" style="margin: 0 10px">HAPUS</a>
                                     <a href="/detailsiswa/{{ $a->id }}" type="button" class="btn btn-info" data-id="{{ $a->id }}">Detail</a>
                                 </td>
                             </tr>

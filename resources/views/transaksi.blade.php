@@ -5,7 +5,7 @@
      <div class="container-fluid">
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-        <a  type="button" class="btn btn-outline-primary" href="/inputpelanggaran">+ TAMBAH DATA</a>
+        <a  type="button" class="btn btn-outline-primary" href="#">+ TAMBAH DATA</a>
         <br>
         <br>
         <!-- DataTales Example -->
@@ -19,18 +19,20 @@
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Nama Siswa</th>
+                                <th>Walas</th>
                                 <th>Pelanggaran</th>
-                                <th>Tindak Lanjut</th>
-                                <th>Jumlah Poin</th>
+                                <th>jumlah</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>No</th>
+                                <th>Nama Siswa</th>
+                                <th>Walas</th>
                                 <th>Pelanggaran</th>
-                                <th>Tindak Lanjut</th>
-                                <th>Jumlah Poin</th>
+                                <th>jumlah</th>
                                 <th>Aksi</th>
                             </tr>
                         </tfoot>
@@ -38,16 +40,23 @@
                             @php
                                 $no = 1;
                             @endphp
-                            @foreach ($data as $a)
+                            @foreach ($datasiswa as $a)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $a->pelanggaran_siswa}}</td>
-                                <td>{{ $a->tindaklanjut}}</td>
-                                <td>{{ $a->jumlahpoin}}</td>
+                                <td>{{ $a->siswa }}</td>
+                                <td>{{ $a->guru->guru }}</td>
                                 <td>
-                                    <a href="/tampilkanpelanggaran/{{ $a->id }}" type="button" class="btn btn-warning">EDIT</a>
-                                    <a href="/deletepelanggaran/{{ $a->id }}" type="button" class="btn btn-danger">HAPUS</a>
-                                    {{-- <button type="button" class="btn btn-info" data-id="{{ $a->id }}">Detail</button> --}}
+                                    <ul>
+                                        @foreach ($a->relationsToPelanggaran as $aa)
+                                            <li>{{ $aa->pelanggaran_siswa }}</li>
+                                        @endforeach
+                                    </ul>
+                                </td>
+                                <td>{{ $a->relationsToPelanggaran->count() }}</td>
+                                <td style="display: flex;">
+                                    <a href="#" type="button" class="btn btn-warning">EDIT</a>
+                                    <a href="#" type="button" class="btn btn-danger" style="margin: 0 10px">HAPUS</a>
+                                    <a href="#" type="button" class="btn btn-info" data-id="#">Detail</a>
                                 </td>
                             </tr>
                             @endforeach

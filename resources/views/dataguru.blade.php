@@ -55,7 +55,7 @@
                             @foreach ($data as $a)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $a->namaguru}}</td>
+                                <td>{{ $a->guru}}</td>
                                 <td>{{ $a->nip}}</td>
                                 <td>{{ $a->matpel }}</td>
                                 {{-- <td>{{ $a->tgllahir }}</td>
@@ -68,7 +68,7 @@
                                 <td>
                                     <a href="/tampilkanguru/{{ $a->id }}" type="button" class="btn btn-warning">EDIT</a>
                                     <a href="/deleteguru/{{ $a->id }}" type="button" class="btn btn-danger">HAPUS</a>
-                                    <button type="button" class="btn btn-info" data-id="{{ $a->id }}">Detail</button>
+                                    {{-- <button type="button" class="btn btn-info" data-id="{{ $a->id }}">Detail</button> --}}
                                 </td>
                             </tr>
                             @endforeach

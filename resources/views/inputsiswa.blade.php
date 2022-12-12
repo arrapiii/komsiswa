@@ -3,13 +3,15 @@
 @section('content')
 <!-- Begin Page Content -->
 <div class="container-fluid">
+  <a  type="button" class="btn btn-outline-primary" href="/siswaa">KEMBALI</a>
     
     <!-- FORM INPUT -->
-    <form action="/insertsiswa" method="POST" enctype="multipart/form-data">
-      @csrf
+    <div class="card-body">
+      <form action="/insertsiswa" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="form-group">
           <label for="exampleInputPassword1">Nama</label>
-          <input type="text" name="nama" class="form-control" placeholder="Nama" required>
+          <input type="text" name="siswa" class="form-control" placeholder="Nama" required>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Kelas</label>
@@ -61,10 +63,17 @@
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Wali Kelas</label>
-          <input type="text" name="walas" class="form-control" placeholder="Wali Kelas" required>
+          <select class="form-control" name="guru_id" id="" required>
+            <option hidden>Walas</option>
+            @foreach ($wal as $guru)
+            <option value="{{ $guru->id }}">{{ $guru->guru }}</option>
+            @endforeach
+          </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+    </div>
+    
     <!-- /.container-fluid -->
 
 </div>

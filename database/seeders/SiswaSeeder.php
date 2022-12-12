@@ -16,7 +16,7 @@ class SiswaSeeder extends Seeder
     public function run()
     {
         DB::table('siswas')->insert([
-            'nama' => 'Arrott',
+            'siswa' => 'Arrott',
             'kelas' => '11',
             'jurusan' => 'PPLG',
             'nis' => '006512345',
@@ -25,7 +25,7 @@ class SiswaSeeder extends Seeder
             'notelp' => '081284954387',
             'email' => 'ara@gmail.com',
             'password' => '12345',
-            'walas' => 'Sinta nur Alifah'
+            'guru_id' => '1'
         ]);
     }
 }

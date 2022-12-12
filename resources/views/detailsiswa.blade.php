@@ -16,7 +16,7 @@
             <div class="card-body">
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{ $data->nama }}" placeholder="Example input placeholder" disabled>
+                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{ $data->siswa }}" placeholder="Example input placeholder" disabled>
                   </div>
                   <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Kelas</label>
@@ -32,6 +32,7 @@
                       <input type="text" class="form-control" placeholder="password" value="{{ $data->nis }}" aria-label="password" disabled>
                     </div>
                 </div>
+                <br>
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Alamat</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" value="{{ $data->alamat }}" placeholder="Example input placeholder" disabled>
@@ -50,9 +51,10 @@
                       <input type="password" class="form-control" placeholder="password" value="{{ $data->password }}" aria-label="password" disabled>
                     </div>
                 </div>
+                <br>
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Walas</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{ $data->walas }}" placeholder="Walas" disabled>
+                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{ $data->guru->namaguru }}" placeholder="Walas" disabled>
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@ class PelanggaranSeeder extends Seeder
     public function run()
     {
         DB::table('pelanggarans')->insert([
-            'pelanggaran' => 'telat',
+            'pelanggaran_siswa' => 'telat',
             'tindaklanjut' => 'ngetes',
             'jumlahpoin' => '10'
         ]);

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\SisPel;
+use App\Models\SiswaPelanggaran;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,3 +75,17 @@ Route::get('/tampilkanguru/{id}', [GuruController::class, 'tampilkanguru'])->nam
 Route::post('/updateguru/{id}', [GuruController::class, 'updateguru'])->name('updateguru');
 
 Route::get('/deleteguru/{id}', [GuruController::class, 'deleteguru'])->name('deleteguru');
+
+// transaksi
+Route::get('/transaksi', function(SiswaPelanggaran $siswapelanggaran){
+    $siswapelanggaran->create(['siswa_id' => '2', 'pelanggaran_id' => '1']);
+    $siswapelanggaran->create(['siswa_id' => '2', 'pelanggaran_id' => '2']);
+    $siswapelanggaran->create(['siswa_id' => '3', 'pelanggaran_id' => '2']);
+    $siswapelanggaran->create(['siswa_id' => '3', 'pelanggaran_id' => '1']);
+
+    return 'berhasil ditambah';
+
+    
+});
+
+Route::get('/transaksii',[SisPel::class, 'getSiswa']);
