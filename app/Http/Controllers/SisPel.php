@@ -28,4 +28,16 @@ class SisPel extends Controller
         ]);
         return redirect("transaksii")->with('success','Data Berhasil Di Tambahkan');
     }
+
+    public function deletepelanggar($id) {
+        $data = Siswa::find($id);
+        $data->delete();
+        return redirect("transaksii")->with('success','Data Berhasil Di Hapus');
+    }
+
+    public function tampilpelanggar(){
+        $datasiswa = Siswa::with('relationsToSiswa', 'relationsToPelanggaran');
+
+        return view('detailpelanggar', compact('datasiswa'));
+    }
 }

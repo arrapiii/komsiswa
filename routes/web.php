@@ -48,7 +48,7 @@ Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('logi
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // siswa
-Route::get('/siswaa', [SiswaController::class, 'siswa'])->name('siswa')->middleware('auth');
+Route::get('/siswaa', [SiswaController::class, 'siswa'])->name('siswa');
 
 Route::get('/inputsiswa', [SiswaController::class, 'inpsiswa'])->name('inpsiswa');
 
@@ -63,7 +63,7 @@ Route::post('/updatesiswa/{id}', [SiswaController::class, 'updatesiswa'])->name(
 Route::get('/deletesiswa/{id}', [SiswaController::class, 'deletesiswa'])->name('deletesiswa');
 
 // pelanggaran
-Route::get('/pelanggaran', [PelanggaranController::class, 'pelanggaran'])->name('pelanggaran')->middleware('auth');
+Route::get('/pelanggaran', [PelanggaranController::class, 'pelanggaran'])->name('pelanggaran');
 
 Route::get('/inputpelanggaran', [PelanggaranController::class, 'inppelanggaran'])->name('inppelanggaran');
 
@@ -76,7 +76,7 @@ Route::post('/updatepelanggaran/{id}', [PelanggaranController::class, 'updatepel
 Route::get('/deletepelanggaran/{id}', [PelanggaranController::class, 'deletepelanggaran'])->name('deletepelanggaran');
 
 // guru
-Route::get('/guruu', [GuruController::class, 'guru'])->name('guru')->middleware('auth');
+Route::get('/guruu', [GuruController::class, 'guru'])->name('guru');
 
 Route::get('/inputguru', [GuruController::class, 'inpguru'])->name('inpguru');
 
@@ -105,3 +105,7 @@ Route::get('/transaksii',[SisPel::class, 'getSiswa'])->middleware('auth');
 Route::get('/inputpelanggar',[SisPel::class, 'inputpelanggar'])->name('inputpelanggar');
 
 Route::post('/insertpelanggar',[SisPel::class, 'insertpelanggar'])->name('insertpelanggar');
+
+Route::get('/tampilpelanggar',[SisPel::class, 'tampilpelanggar'])->name('tampilpelanggar');
+
+Route::get('/deletepelanggar/{id}', [SisPel::class, 'deletepelanggar'])->name('deletepelanggar');

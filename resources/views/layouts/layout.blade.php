@@ -72,6 +72,7 @@
                         <a class="collapse-item" href="/guruu">Data Guru</a>
                         <a class="collapse-item" href="/siswaa">Data Siswa</a>
                         <a class="collapse-item" href="/pelanggaran">Data Pelanggaran</a>
+                        <a class="collapse-item" href="/tampilpelanggar">Data Pelanggar</a>
                     </div>
                 </div>
             </li>   

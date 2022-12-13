@@ -11,7 +11,7 @@
         @csrf
           <div class="form-group">
             <label for="exampleInputPassword1">Pelanggaran</label>
-            <input type="text" name="pelanggaran_siswa" class="form-control" placeholder="Pelanggaran" value="{{ $data->pelanggaran }}" required>
+            <input type="text" name="pelanggaran_siswa" class="form-control" placeholder="Pelanggaran" value="{{ $data->pelanggaran_siswa }}" required>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Tindak Lanjut</label>

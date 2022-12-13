@@ -76,7 +76,7 @@
                                     {{ $total }}
                                 </td>
                                 <td style="display: flex;">
-                                    {{-- <a href="/detailpelanggar" type="button" class="btn btn-info" data-id="#">Detail</a> --}}
+                                    {{-- <a href="/deletepelanggar/{{ $a->id }}" type="button" class="btn btn-danger" data-id="#">Delete</a> --}}
                                 </td>
                             </tr>
                             @endforeach

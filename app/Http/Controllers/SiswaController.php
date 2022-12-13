@@ -20,7 +20,18 @@ class SiswaController extends Controller
     }
 
     public function insertsiswa(Request $request) {
-        Siswa::create($request->all());
+        Siswa::create([
+            'siswa'=>$request->siswa,
+            'kelas'=>$request->kelas,
+            'jurusan'=>$request->jurusan,
+            'nis'=>$request->nis,
+            'jeniskelamin'=>$request->jeniskelamin,
+            'alamat'=>$request->alamat,
+            'notelp'=>$request->notelp,
+            'email'=>$request->email,
+            'password'=>$request->password,
+            'guru_id'=>$request->guru_id
+        ]);
         return redirect()->route('siswa')->with('success','Data Berhasil Di Tambahkan');
     }
 
@@ -41,8 +52,19 @@ class SiswaController extends Controller
     }
 
     public function updatesiswa(Request $request, $id) {
-        $data = Siswa::with('relationsToPelanggaran', 'guru');
-        $data->update($request->all());
+        $data = Siswa::with('relationsToPelanggaran', 'guru')->find($id);
+        $data->update([
+            'id'=>$request->id,
+            'siswa'=>$request->siswa,
+            'kelas'=>$request->kelas,
+            'jurusan'=>$request->jurusan,
+            'nis'=>$request->nis,
+            'jeniskelamin'=>$request->jeniskelamin,
+            'alamat'=>$request->alamat,
+            'notelp'=>$request->notelp,
+            'email'=>$request->email,
+            'password'=>$request->password,
+        ]);
         return redirect()->route('siswa')->with('success','Data Berhasil Di Ubah'); 
     }
 

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class SiswaSeeder extends Seeder
 {
@@ -15,17 +16,34 @@ class SiswaSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker::create('id_ID');
+        $kelas = array('10', '11', '12');
+        $kelam = array('Laki-laki', 'Perempuan');
+        $jurusan = array(
+            'TJKT', 'Animasi', 'PPLG', 'BRC', 'TE'
+        );
+
+        $jurusans = $jurusan[array_rand($jurusan)];
+        $nisn = rand(1000000000,9999999999);
+        $kelass= $kelas[array_rand($kelas)];
+        $walas = rand(1, 2);
+        $kelamin = $kelam[array_rand($kelam)];
+        $nomer = rand(620000000000,629999999999);
+
+      
         DB::table('siswas')->insert([
-            'siswa' => 'Arrott',
-            'kelas' => '11',
-            'jurusan' => 'PPLG',
-            'nis' => '006512345',
-            'jeniskelamin' => 'Laki-laki',
-            'alamat' => 'Depok',
-            'notelp' => '081284954387',
-            'email' => 'ara@gmail.com',
-            'password' => '12345',
-            'guru_id' => '1'
+            'siswa'=>$faker->name,
+            'kelas'=>$kelass,
+            'jurusan'=>$jurusans,
+            'nis'=>$nisn,
+            'jeniskelamin'=>$kelamin,
+            'alamat'=>$faker->address,
+            'notelp'=>$nomer,
+            'email'=>$faker->email,
+            'password'=>$faker->text,
+            'guru_id'=>$walas,
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
     }
 }

@@ -15,7 +15,7 @@ class Siswa extends Model
     protected $table = 'siswas';
     protected $primaryKey = 'id';
     protected $guarded = [];
-    protected $fillable = ['siswa', 'kelas', 'jurusan', 'nis', 'jeniskelamin', 'alamat', 'notelp', 'email', 'password', 'guru_id'];
+    protected $fillable = ['_token', 'siswa', 'kelas', 'jurusan', 'nis', 'jeniskelamin', 'alamat', 'notelp', 'email', 'password', 'guru_id'];
 
     public function guru() {
         return $this->belongsTo(Guru::class);

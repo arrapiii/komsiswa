@@ -56,6 +56,30 @@
                     <label for="formGroupExampleInput" class="form-label">Walas</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" value="{{ $data->guru->guru }}" placeholder="Walas" disabled>
                 </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Pelanggaran</label>
+                    @foreach ($data->relationsToPelanggaran as $a)
+                      <input type="textarea" class="form-control" id="formGroupExampleInput" value="{{ $a->pelanggaran_siswa }}" placeholder="Walas" disabled>    
+                    @endforeach
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Poin</label>
+                    @foreach ($data->relationsToPelanggaran as $b)
+                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{ $b->jumlahpoin }}" placeholder="Walas" disabled>
+                    @endforeach
+                </div>
+                <div class="mb-3">
+                  @php
+                  $total = 0
+                  @endphp
+                    <label for="formGroupExampleInput" class="form-label">Total Poin</label>
+                    @foreach ($data->relationsToPelanggaran as $poin)
+                    @php
+                    $total += $poin -> jumlahpoin
+                    @endphp
+                    @endforeach
+                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{ $total }}" placeholder="Walas" disabled>
+                </div>
             </div>
         </div>
     </div>

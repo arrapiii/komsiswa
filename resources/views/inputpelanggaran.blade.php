@@ -11,7 +11,7 @@
         @csrf
           <div class="form-group">
             <label for="exampleInputPassword1">Pelanggaran</label>
-            <input type="text" name="pelanggaran_siswa" class="form-control" placeholder="Pelanggaran" required>
+            <input type="text" name="pelanggaran_siswa" class="form-control" placeholder="Pelanggaran" autocomplete="off" required>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Tindak Lanjut</label>
